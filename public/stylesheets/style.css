@@ -1,0 +1,104 @@
+body {
+  font-family: "Marvel", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif,
+    sans-serif;
+}
+
+.white {
+  color: white;
+}
+
+.black {
+  color: black;
+}
+
+.navbar {
+    padding-left: 30px;
+}
+
+.navbar-light .navbar-brand{
+  color: white;
+}
+
+.navbar-light .navbar-brand:hover{
+  color: #f0e008;
+}
+
+.marvel-logo {
+  width: 90px;
+}
+
+.marvel-red {
+  color: #ed1d24;
+}
+
+.marvel-red-bg {
+  background-color: #ed1d24;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #f0e008;
+}
+
+.item {
+  max-width: 600px;
+}
+form input {
+  margin-bottom: 16px,
+}
+
+.btn{
+    color: white;
+    border-color: white;
+}
+.btn:hover{
+    background-color: rgba(255, 0, 0, 0.548);
+    color:white;
+}
+
+
+.navbar navbar-expand-lg marvel-red-bg{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 500px;
+}
+
+.signup-container {
+    text-align: center;
+    width: fit-content;
+    margin: 48px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+form {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form input {
+    margin:16px 0;
+    padding: 0;
+    
+}
+.card-img-top{
+  height: 300px;
+  object-fit: cover;
+  object-fit: left;
+}
+
+.modal img {
+  width: 150px;
+  margin-bottom: 15px;
+  border: 1px solid black;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
