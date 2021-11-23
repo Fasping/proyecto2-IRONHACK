@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 const chalk = require("chalk");
 
-const MONGO_URI = process.env.MONGODB_URI;
+const MONGODB_URI = process.env.MONGODB_URI;
 
 //Mongoose connect
 const connectToMongo = async () => {
   try {
-    await mongoose.connect(MONGO_URI, {
+    await mongoose.connect(MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });

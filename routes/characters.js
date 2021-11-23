@@ -7,10 +7,8 @@ const User = require("../models/User.model");
 
 router.get("/", async (req, res) => {
   try {
-    const axiosCall = await axios(
-      `https://gateway.marvel.com/v1/public/characters?limit=50&offset=110&ts=1&apikey=${process.env.API_KEY}&hash=${process.env.HASH}`
-    );
-    const charactersInfo = axiosCall.data.data.results; //esto es un array
+    const axiosCall = await axios(`https://akabab.github.io/starwars-api/api/all.json`);
+    const charactersInfo = axiosCall.data; //esto es un array
     res.render("./characters.hbs", { charactersInfo });
   } catch (err) {
     console.log(chalk.bgRed(err));
@@ -19,7 +17,7 @@ router.get("/", async (req, res) => {
 
 router.post("/create/:id", async (req, res) => {
   const axiosCall = await axios(
-    `http://gateway.marvel.com/v1/public/characters/${req.params.id}?ts=1&apikey=${process.env.API_KEY}&hash=${process.env.HASH}`
+    `https://akabab.github.io/starwars-api/api/all.json`
   );
 
   const infoFromCharacter = axiosCall.data.data.results;

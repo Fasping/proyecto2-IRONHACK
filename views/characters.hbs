@@ -1,12 +1,13 @@
 <h2>List of 50 characters</h2>
 
-<div class="row row-cols-1 row-cols-md-3 g-3">
+<div class="row row-cols-1 row-cols-md-3 g-4">
 
     {{#each charactersInfo}}
     <div class="col">
-        <img src={{this.thumbnail.path}}.{{this.thumbnail.extension}} class="card-img-top" alt="{{this.name}}">
+        <img src={{this.image}} class="card-img-top" alt="{{this.name}}onerror="this.src="../images/default.jpeg">
         <div class="card-body">
             <h5 class="card-title">{{this.name}}</h5>
+            {{!-- <img src="{{img_url}}" alt="{{name}}" onerror="this.src='../images/default.jpg';" /> --}}
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#{{this.id}}">
                 More info
@@ -26,14 +27,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src={{this.thumbnail.path}}.{{this.thumbnail.extension}} alt="{{this.name}}">
-                    <p>{{this.description}}</p>
-                    <p>Comics in which {{this.name}} appears:</p>
-                    <ul>
-                        {{#each this.comics.items}}
-                        <li>{{this.name}}</li>
-                        {{/each}}
-                    </ul>
+                    <img src={{this.image}} alt="{{this.name}}">
+                    <a href="{{this.wiki}}" target="_blank">More info</a>
+                    <p>Born in <span class="planet">{{this.homeworld}}</span></p>
+                
 
                 </div>
                 <div class="modal-footer">
