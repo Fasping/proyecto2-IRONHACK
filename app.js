@@ -32,6 +32,7 @@ require("./config/session.config")(app);
 app.use("/", require("./routes/home.js"));
 app.use("/", require("./routes/auth.js"));
 app.use("/characters", require("./routes/characters.js"));
+app.use("/", require("./routes/usuario.js"));
 
 //App listener
 app.listen(PORT, () => {
@@ -40,9 +41,7 @@ app.listen(PORT, () => {
 
 
 
-//Para ver los 50 primeros:
 
-// https://gateway.marvel.com/v1/public/characters?limit=50&ts=1&apikey=aa5dfbaab3bbc9e17daea843dbae6d47&hash=3129c97e301afe65b334353cfcfe28d6
 
 // offset=10 --> saltate los primeros 10 heroes
 // limit=20 --> muestrame solo 20 heroes

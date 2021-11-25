@@ -5,6 +5,9 @@ const axios = require("axios");
 const Character = require("../models/Character.model");
 const User = require("../models/User.model");
 
+//My own middleware
+const {isLoggedIn} = require("../middleware/route-gard")
+
 router.get("/", async (req, res) => {
   try {
     const axiosCall = await axios(`https://akabab.github.io/starwars-api/api/all.json`);
@@ -16,23 +19,15 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/create/:id", async (req, res) => {
+  console.log(req.params.id);
   const axiosCall = await axios(
-    `https://akabab.github.io/starwars-api/api/all.json`
+    `https://akabab.github.io/starwars-api/api/id/${req.params.id}.json`
   );
 
-  const infoFromCharacter = axiosCall.data.data.results;
+  const infoFromCharacter = axiosCall.data;
+  console.log(axiosCall.data);
 
-  const dataToUpload = {
-    name: infoFromCharacter[0].name,
-    description: infoFromCharacter[0].description,
-    thumbnail:
-      infoFromCharacter[0].thumbnail.path +
-      "." +
-      infoFromCharacter[0].thumbnail.extension,
-    comic: [...infoFromCharacter[0].comics.items],
-  };
-
-  const justCreatedCharacter = await Character.create(dataToUpload);
+  const justCreatedCharacter = await Character.create(infoFromCharacter);
 
   await User.findByIdAndUpdate(
     req.session.loggedUser._id,
@@ -40,7 +35,7 @@ router.post("/create/:id", async (req, res) => {
     { new: true }
   );
 
-  res.redirect("/");
-});
+  res.redirect("/favoritos");
+ });
 
 module.exports = router;

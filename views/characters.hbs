@@ -7,8 +7,6 @@
         <img src={{this.image}} class="card-img-top" alt="{{this.name}}onerror="this.src="../images/default.jpeg">
         <div class="card-body">
             <h5 class="card-title">{{this.name}}</h5>
-            {{!-- <img src="{{img_url}}" alt="{{name}}" onerror="this.src='../images/default.jpg';" /> --}}
-            <!-- Button trigger modal -->
             <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#{{this.id}}">
                 More info
             </button>
@@ -34,7 +32,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
                     <form method="POST" action="/characters/create/{{this.id}}">
                         <button type="submit" class="btn btn-primary">Save to Favorites</button>
                     </form>

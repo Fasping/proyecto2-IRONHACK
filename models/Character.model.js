@@ -3,9 +3,10 @@ const { Schema, model } = require("mongoose");
 const characterSchema = new Schema(
   {
     name: { type: String, required: true },
-    description: { type: String },
-    thumbnail: { type: String },
-    comic: [{ resourceURI: { type: String }, name: { type: String } }],
+    // height: { type: Number },
+    // affiliations: { type: [String] },
+    image: { type: String },
+    
   },
   { timestamps: true }
 );
