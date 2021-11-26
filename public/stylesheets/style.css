@@ -1,15 +1,16 @@
 body {
   font-family: "Marvel", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif,
     sans-serif;
+  background-image: url("../images/spacee.png");
 }
 
-.white {
+/* .white {
   color: white;
 }
 
 .black {
   color: black;
-}
+} */
 
 .navbar {
     padding-left: 30px;
@@ -29,13 +30,7 @@ body {
   width: 90px;
 }
 
-.marvel-red {
-  color: #ed1d24;
-}
 
-.marvel-red-bg {
-  background-color: #ed1d24;
-}
 .navbar-light .navbar-nav .nav-link {
   color:black;
   font-size: 20px;
@@ -174,7 +169,7 @@ h1 {
 }
 .ov-btn-grow-box::after {
   content: "";
-  background: #e9bd15; /* color de fondo hover */
+  background: #f1e504; /* color de fondo hover */
   position: absolute;
   z-index: -1;
   padding: 16px 20px;
@@ -205,6 +200,36 @@ h1 {
     background-color: #F5F5F5;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: #F90; 
+    background-color: yellow; 
     background-image: -webkit-linear-gradient(90deg,rgba(255, 255, 255, .2) 25%,transparent 25%,transparent 50%,rgba(255, 255, 255, .2) 50%,rgba(255, 255, 255, .2) 75%,transparent 75%,transparent)
+}
+
+ /* --------------------- CSS PARA EFECTO WRITE EN EL HOME---------------------- */
+
+@import url(https://fonts.googleapis.com/css?family=Khula:700);
+
+.hidden {
+  opacity:0;
+}
+.console-container {
+ 
+  font-family:Khula;
+  font-size:4em;
+  text-align:center;
+  height:200px;
+  width:600px;
+  display:block;
+  position:absolute;
+  color:white;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+}
+.console-underscore {
+   display:inline-block;
+  position:relative;
+  top:-0.14em;
+  left:10px;
 }
