@@ -1,6 +1,21 @@
-<h1>FAVORITOS</h1>
+<h1 >FAVORITOS</h1>
 
-{{#each characters}}
-    <p>{{name}}</p>
-    <img src={{image}}>
-{{/each}}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+    {{#each characters}}
+    <div class="col">
+        <img src={{this.image}} class="card-img-top" alt="{{this.name}}onerror=" this.src="../images/default.jpeg">
+        <div class="card-body">
+            <h5 class="nameFav">{{this.name}}</h5>
+            <form method="POST" action="/characters/delete/{{this.id}}">
+            <button  class="btn btn-secondary" data-toggle="modal"  type="submit" id="unFavButton">Delete Favorite</button>
+            </form>
+        </div>
+    </div>
+
+    {{/each}}
+
+</div>
+
+
+

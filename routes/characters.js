@@ -24,6 +24,7 @@ router.post("/create/:id", async (req, res) => {
     `https://akabab.github.io/starwars-api/api/id/${req.params.id}.json`
   );
 
+
   const infoFromCharacter = axiosCall.data;
   console.log(axiosCall.data);
 
@@ -37,5 +38,18 @@ router.post("/create/:id", async (req, res) => {
 
   res.redirect("/favoritos");
  });
+
+//Delete Fav
+router.post("/delete/:id", async (req, res) => {
+  try {
+    await Character.findByIdAndDelete(req.params.id, { new: true });
+    await User.findByIdAndUpdate(req.session.loggedUser._id, {
+      $pull: { pics: req.params.id },
+    });
+  } catch (err) {
+    console.log(err);
+  }
+  res.redirect(`/favoritos`);
+});
 
 module.exports = router;
