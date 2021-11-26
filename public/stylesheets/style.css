@@ -14,6 +14,7 @@ body {
 .navbar {
     padding-left: 30px;
     background-color: #FFE81F;
+   position: sticky;
 }
 
 .navbar-light .navbar-brand{
@@ -125,18 +126,10 @@ form input {
   justify-content: center;
   padding-top: 10px;
   padding-bottom: 50px;
+  margin: 80px;
+  margin-bottom: auto;
 }
 
-.buttons  a {
-	border-radius: 50%;
-	text-decoration: none;
-  background-color: #e9bd15;
-	color: black;
-	font-size: 22px;
-	padding: 14px 14px;
-	box-shadow: 0px 0px 10px #0a0a0a4f;
-	margin: 10px;
-}
 
 .col img{
   background-color:#CCCCCC;
@@ -148,6 +141,7 @@ h1 {
   justify-content: center;
 }
 
+/* ----------------Estilo letra Titulo PERSONAJES------------------------------ */
 .personajesH2{
   display: flex;
   justify-content: center;
@@ -156,15 +150,48 @@ h1 {
 }
 
 
-/* ------------------ Estilos Hoja Favs ---------------------------- */
-.nameFav{
-  
+/* -------------------Estilo letra STARWARS IronAPP--------------------------- */
+.ironApp{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
-.h2Fav{
-  text-align: center;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+/* -----ESTILO BOTON------- */
+.ov-btn-grow-box {
+  background: #fff; /* color de fondo */
+  color: black; /* color de fuente */
+  border: 2px solid black; /* tamaño y color de borde */
+  padding: 16px 20px;
+  border-radius: 3px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
 }
+.ov-btn-grow-box:hover {
+  color: #fff;/* color de fuente hover */
+}
+.ov-btn-grow-box::after {
+  content: "";
+  background: #e9bd15; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: scale(0, 0);
+  transition: all 0.3s ease;
+}
+.ov-btn-grow-box:hover::after {
+  transition: all 0.3s ease-out;
+  transform: scale(1, 1);
+}
+/* ------------------------------------------------------------------------------------------- */
+
 
 
 /* ----------------Dar estilos a la barra scroll------------- */
