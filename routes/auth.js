@@ -6,18 +6,20 @@ const User = require("../models/User.model");
 
 //Renderizar el formulario de sign up
 router.get("/signup", (req, res, next) => {
+  console.log("get.signup")
   res.render("signup");
 });
 
 //Renderizar el formulario de login
 router.get("/login", (req, res, next) => {
+   console.log("get.login");
   res.render("login");
 });
 
 //POST para crear un nuevo usuario
 router.post("/signup", async (req, res, next) => {
   const { username, email, password, passwordRepeat } = req.body;
-
+console.log("signup")
   //Verificar que no hay ningún campo vacío
   if (!username || !email || !password || !passwordRepeat) {
     res.render("signup.hbs", { msg: "You need to fill all inputs" });
@@ -67,7 +69,7 @@ router.post("/signup", async (req, res, next) => {
 //POST para hacer login
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
-
+console.log("login")
   //Verificar que ningun campo esta vacio
   if (!username || !password) {
     res.render("login", { msg: "You need to fill all inputs" });
@@ -89,7 +91,7 @@ router.post("/login", async (req, res) => {
 
   //Hacer login
   req.session.loggedUser = existingUser;
-  console.log("SESSION ====> ,", req.session);
+  //console.log("SESSION ====> ,", req.session);
   res.redirect("/");
 });
 

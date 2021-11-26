@@ -43,5 +43,4 @@ app.listen(PORT, () => {
 
 
 
-// offset=10 --> saltate los primeros 10 heroes
-// limit=20 --> muestrame solo 20 heroes
+

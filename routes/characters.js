@@ -19,14 +19,14 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/create/:id", async (req, res) => {
-  console.log(req.params.id);
+ //console.log(req.params.id);
   const axiosCall = await axios(
     `https://akabab.github.io/starwars-api/api/id/${req.params.id}.json`
   );
 
 
   const infoFromCharacter = axiosCall.data;
-  console.log(axiosCall.data);
+  //console.log(axiosCall.data);
 
   const justCreatedCharacter = await Character.create(infoFromCharacter);
 
